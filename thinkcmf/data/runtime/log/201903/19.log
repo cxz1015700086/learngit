@@ -2873,3 +2873,706 @@
   'filtered' => NULL,
   'extra' => 'no matching row in const table',
 ) ]
+---------------------------------------------------------------
+[2019-03-19T22:04:37+08:00] ::1 GET yiwei.com/
+[运行时间：0.219321s] [吞吐率：4.56req/s] [内存消耗：7,186.90kb] [文件加载：92]
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf/vendor\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yiwei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor\thinkcmf\cmf\src\behavior/../lang\zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\public/themes/default/portal\\index.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001655s ] mysql:host=127.0.0.1;port=3306;dbname=thinkcmf;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook` [ RunTime:0.003387s ]
+[ sql ] [ SQL ] SELECT `hook` FROM `cmf_hook` WHERE  `app` = 'portal' [ RunTime:0.000544s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_hook',
+  'partitions' => NULL,
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 56,
+  'filtered' => 9.9999990463256836,
+  'extra' => 'Using where',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.003305s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1  AND `hook` IN ('') ORDER BY `list_order` ASC [ RunTime:0.000394s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_hook_plugin',
+  'partitions' => NULL,
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.000992s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.000488s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'site_info' LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_option',
+  'partitions' => NULL,
+  'type' => 'const',
+  'possible_keys' => 'option_name',
+  'key' => 'option_name',
+  'key_len' => '194',
+  'ref' => 'const',
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => NULL,
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_theme_file` [ RunTime:0.002998s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_theme_file` WHERE  `theme` = 'default' [ RunTime:0.000494s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_theme_file',
+  'partitions' => NULL,
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => 'Using where',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_theme` [ RunTime:0.003187s ]
+[ sql ] [ SQL ] UPDATE `cmf_theme`  SET `name` = 'default' , `version` = '1.0.0' , `demo_url` = 'http://demo.thinkcmf.com' , `author` = 'ThinkCMF' , `lang` = 'zh-cn' , `author_url` = 'http://www.thinkcmf.com' , `keywords` = 'ThinkCMF默认模板' , `description` = 'ThinkCMF默认模板'  WHERE  `theme` = 'default' [ RunTime:0.000795s ]
+[ sql ] [ SQL ] SELECT `more` FROM `cmf_theme_file` WHERE  `theme` = 'default'  AND (  `is_public` = 1 OR `file` = 'portal/index' ) [ RunTime:0.000458s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_theme_file',
+  'partitions' => NULL,
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => 'Using where',
+) ]
+[ warn ] SQL:SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = :ThinkBind_1_  AND `hook` IN ('') ORDER BY `list_order` ASC [Using where; Using filesort]
+---------------------------------------------------------------
+[2019-03-19T22:04:37+08:00] ::1 GET yiwei.com/favicon.ico
+[运行时间：0.161066s] [吞吐率：6.21req/s] [内存消耗：5,900.77kb] [文件加载：76]
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf/vendor\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yiwei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://yiwei.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor\thinkcmf\cmf\src\behavior/../lang\zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002879s ] mysql:host=127.0.0.1;port=3306;dbname=thinkcmf;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook` [ RunTime:0.004718s ]
+[ sql ] [ SQL ] SELECT `hook` FROM `cmf_hook` WHERE  `app` = 'favicon.ico' [ RunTime:0.000496s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_hook',
+  'partitions' => NULL,
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 56,
+  'filtered' => 9.9999990463256836,
+  'extra' => 'Using where',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.004206s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1  AND `hook` IN ('') ORDER BY `list_order` ASC [ RunTime:0.000648s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_hook_plugin',
+  'partitions' => NULL,
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => 'Using where; Using filesort',
+) ]
+[ warn ] SQL:SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = :ThinkBind_1_  AND `hook` IN ('') ORDER BY `list_order` ASC [Using where; Using filesort]
+---------------------------------------------------------------
+[2019-03-19T22:04:42+08:00] ::1 GET yiwei.com/favicon.ico
+[运行时间：0.078681s] [吞吐率：12.71req/s] [内存消耗：4,155.88kb] [文件加载：71]
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf/vendor\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yiwei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor\thinkcmf\cmf\src\behavior/../lang\zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn.php
+---------------------------------------------------------------
+[2019-03-19T22:04:46+08:00] ::1 GET yiwei.com/admin/index/index.html
+[运行时间：0.097391s] [吞吐率：10.27req/s] [内存消耗：6,201.93kb] [文件加载：88]
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf/vendor\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yiwei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor\thinkcmf\cmf\src\behavior/../lang\zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn/admin_menu.php
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001460s ] mysql:host=127.0.0.1;port=3306;dbname=thinkcmf;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.001037s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.000528s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.000528s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+---------------------------------------------------------------
+[2019-03-19T22:04:46+08:00] ::1 GET yiwei.com/admin/public/login.html
+[运行时间：0.098579s] [吞吐率：10.14req/s] [内存消耗：6,173.33kb] [文件加载：84]
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf/vendor\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yiwei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; thinkphp_show_page_trace=0|0; PHPSESSID=c3lseips83j4l7l3ces3dpn8t7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor\thinkcmf\cmf\src\behavior/../lang\zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\public/themes/admin_simpleboot3/admin\\login.html [ array (
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001227s ] mysql:host=127.0.0.1;port=3306;dbname=thinkcmf;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.000909s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.000425s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.000607s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.000464s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+---------------------------------------------------------------
+[2019-03-19T22:04:46+08:00] ::1 GET yiwei.com/new_captcha.html?height=32&width=150&font_size=18
+[运行时间：0.075161s] [吞吐率：13.30req/s] [内存消耗：3,571.70kb] [文件加载：63]
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf/vendor\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'new_captcha',
+  'route' => '\\cmf\\controller\\CaptchaController@index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yiwei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://yiwei.com/admin/public/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; thinkphp_show_page_trace=0|0; PHPSESSID=c3lseips83j4l7l3ces3dpn8t7',
+)
+[ info ] [ PARAM ] array (
+  'height' => '32',
+  'width' => '150',
+  'font_size' => '18',
+)
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor\thinkcmf\cmf\src\behavior/../lang\zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn.php
+---------------------------------------------------------------
+[2019-03-19T22:04:55+08:00] ::1 POST yiwei.com/admin/public/dologin.html
+[运行时间：0.202570s] [吞吐率：4.94req/s] [内存消耗：6,321.43kb] [文件加载：85]
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf/vendor\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yiwei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '66',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://yiwei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://yiwei.com/admin/public/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; thinkphp_show_page_trace=0|0; PHPSESSID=c3lseips83j4l7l3ces3dpn8t7',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'captcha' => 'nj6k',
+  '_captcha_id' => '',
+  'redirect' => '',
+)
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor\thinkcmf\cmf\src\behavior/../lang\zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001388s ] mysql:host=127.0.0.1;port=3306;dbname=thinkcmf;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.000995s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.000512s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.003746s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `user_login` = 'admin' LIMIT 1 [ RunTime:0.000919s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_user',
+  'partitions' => NULL,
+  'type' => 'ref',
+  'possible_keys' => 'user_login',
+  'key' => 'user_login',
+  'key_len' => '182',
+  'ref' => 'const',
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => NULL,
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.003520s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `cmf_role_user` `a` INNER JOIN `cmf_role` `b` ON `a`.`role_id`=`b`.`id` WHERE  `user_id` = 1  AND `status` = '1' LIMIT 1 [ RunTime:0.002934s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'a',
+  'partitions' => NULL,
+  'type' => 'ref',
+  'possible_keys' => 'role_id,user_id',
+  'key' => 'user_id',
+  'key_len' => '8',
+  'ref' => 'const',
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => NULL,
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user_token` [ RunTime:0.003333s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user_token` WHERE  `user_id` = 1  AND `device_type` = 'web' LIMIT 1 [ RunTime:0.000510s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_user_token',
+  'partitions' => NULL,
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => 'Using where',
+) ]
+[ sql ] [ SQL ] UPDATE `cmf_user`  SET `user_type` = 1 , `sex` = 0 , `birthday` = 0 , `last_login_time` = 1553004295 , `score` = 0 , `coin` = 0 , `balance` = 0 , `create_time` = 1553001481 , `user_status` = 1 , `user_login` = 'admin' , `user_pass` = '###22895f70a12c9aecb70e7ca82fe274e7' , `user_nickname` = 'admin' , `user_email` = '1536741355@qq.com' , `user_url` = '' , `avatar` = '' , `signature` = '' , `last_login_ip` = '::1' , `user_activation_key` = '' , `mobile` = '' , `more` = NULL  WHERE  `id` = 1 [ RunTime:0.044878s ]
+---------------------------------------------------------------
+[2019-03-19T22:04:57+08:00] ::1 GET yiwei.com/admin/index/index.html
+[运行时间：0.196632s] [吞吐率：5.09req/s] [内存消耗：7,085.02kb] [文件加载：95]
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf/vendor\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yiwei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://yiwei.com/admin/public/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; thinkphp_show_page_trace=0|0; PHPSESSID=c3lseips83j4l7l3ces3dpn8t7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor\thinkcmf\cmf\src\behavior/../lang\zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn/admin_menu.php
+[ info ] [ VIEW ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\public/themes/admin_simpleboot3/admin\index\index.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'menus_js_var',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001164s ] mysql:host=127.0.0.1;port=3306;dbname=thinkcmf;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.001203s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.001485s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.000649s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.005922s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000973s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_user',
+  'partitions' => NULL,
+  'type' => 'const',
+  'possible_keys' => 'PRIMARY',
+  'key' => 'PRIMARY',
+  'key_len' => '8',
+  'ref' => 'const',
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => NULL,
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_admin_menu` [ RunTime:0.003309s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` ORDER BY `app` ASC,`controller` ASC,`action` ASC [ RunTime:0.001496s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_admin_menu',
+  'partitions' => NULL,
+  'type' => 'ALL',
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => 132,
+  'filtered' => 100,
+  'extra' => 'Using filesort',
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.000475s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ warn ] SQL:SELECT * FROM `cmf_admin_menu` ORDER BY `app` ASC,`controller` ASC,`action` ASC [Using filesort]
+---------------------------------------------------------------
+[2019-03-19T22:04:57+08:00] ::1 GET yiwei.com/admin/main/index.html
+[运行时间：0.129656s] [吞吐率：7.71req/s] [内存消耗：6,247.45kb] [文件加载：88]
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf/vendor\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yiwei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://yiwei.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; thinkphp_show_page_trace=0|0; PHPSESSID=c3lseips83j4l7l3ces3dpn8t7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor\thinkcmf\cmf\src\behavior/../lang\zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\vendor/thinkcmf/cmf-app/src/user/lang/zh-cn/admin_menu.php
+[ info ] [ VIEW ] E:\wamp64\www\GitYWPro\learngit\thinkcmf\public/themes/admin_simpleboot3/admin\main\index.html [ array (
+  0 => 'admin',
+  1 => 'dashboard_widgets',
+  2 => 'dashboard_widget_plugins',
+  3 => 'has_smtp_setting',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001360s ] mysql:host=127.0.0.1;port=3306;dbname=thinkcmf;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.000603s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.003085s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000566s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => 'cmf_user',
+  'partitions' => NULL,
+  'type' => 'const',
+  'possible_keys' => 'PRIMARY',
+  'key' => 'PRIMARY',
+  'key_len' => '8',
+  'ref' => 'const',
+  'rows' => 1,
+  'filtered' => 100,
+  'extra' => NULL,
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_dashboard_widgets' LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'smtp_setting' LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.000549s ]
+[ sql ] [ EXPLAIN : array (
+  'id' => 1,
+  'select_type' => 'SIMPLE',
+  'table' => NULL,
+  'partitions' => NULL,
+  'type' => NULL,
+  'possible_keys' => NULL,
+  'key' => NULL,
+  'key_len' => NULL,
+  'ref' => NULL,
+  'rows' => NULL,
+  'filtered' => NULL,
+  'extra' => 'no matching row in const table',
+) ]

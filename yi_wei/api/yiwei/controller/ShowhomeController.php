@@ -53,4 +53,22 @@ class ShowhomeController extends RestBaseController
         $school=$sModel->getAllSchool();
         $this->success('请求成功!', ['school'=>$school]);
     }
+
+    /**
+     * @api {GET} http://47.106.132.24/yi_wei/public/api.php/yiwei/showhome/schoolBySearch 查询学校
+     * @apiVersion 1.0.0
+     * @apiGroup ShowHome
+     * @apiName  schoolBySearch
+     *
+     * @apiSuccess {int} school_id  学校ID
+     * @apiSuccess {String} s_name  学校名
+     *
+     */
+    public function schoolBySearch(){
+        $p=$this->request->param();
+        $input=$p['search'];
+        $sModel=new SchoolModel();
+        $school=$sModel->getSchoolBySearch($input);
+        $this->success('请求成功!', ['school'=>$school]);
+    }
 }

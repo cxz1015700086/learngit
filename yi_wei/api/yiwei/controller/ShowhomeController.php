@@ -18,10 +18,20 @@ class ShowhomeController extends RestBaseController
      * @apiGroup ShowHome
      * @apiName  schoolShow
      *
-     * @apiSuccess {int} school_id 学校ID
-     * @apiSuccess {String} s_name  学校名
-     * @apiSuccess {String} s_introduction  学校介绍
+     * @apiParam {String} school_id 学校ID
      *
+     * @apiSuccess {Object[]} school 学校
+     * @apiSuccess {int} school.school_id 学校ID
+     * @apiSuccess {String} school.s_name  学校名
+     * @apiSuccess {String} school.s_introduction  学校介绍
+     * @apiSuccessExample {json} Success-School:
+     *     "data":{
+     *       "school":{
+     *              "school_id":1,
+     *              "s_name":"集美大学",
+     *              "s_introduction":"集美极美"
+     *                }
+     *             }
      */
     public function schoolShow()
     {
@@ -44,9 +54,15 @@ class ShowhomeController extends RestBaseController
      * @apiGroup ShowHome
      * @apiName  schoolAll
      *
-     * @apiSuccess {int} school_id  学校ID
-     * @apiSuccess {String} s_name  学校名
-     *
+     * @apiSuccess {Object[]} school 学校
+     * @apiSuccess {int} school.school_id 学校ID
+     * @apiSuccess {String} school.s_name  学校名
+     * @apiSuccessExample {json} Success-School:
+     *     "data":{
+     *        "school":[
+     *             {"school_id":1,"s_name":"集美大学"},
+     *             {"school_id":2,"s_name":"厦门大学"}]
+     *           }
      */
     public function schoolAll(){
         $sModel=new SchoolModel();
@@ -60,9 +76,17 @@ class ShowhomeController extends RestBaseController
      * @apiGroup ShowHome
      * @apiName  schoolBySearch
      *
-     * @apiSuccess {int} school_id  学校ID
-     * @apiSuccess {String} s_name  学校名
+     * @apiParam {String} search 搜索内容
      *
+     * @apiSuccess {Object[]} school 学校
+     * @apiSuccess {int} school.school_id 学校ID
+     * @apiSuccess {String} school.s_name  学校名
+     * @apiSuccessExample {json} Success-School:
+     *     "data":{
+     *        "school":[
+     *             {"school_id":1,"s_name":"集美大学"},
+     *             {"school_id":2,"s_name":"厦门大学"}]
+     *           }
      */
     public function schoolBySearch(){
         $p=$this->request->param();

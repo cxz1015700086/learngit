@@ -1,7 +1,37 @@
 [
   {
     "type": "GET",
-    "url": "http://yiwei.com/api/yiwei/Showhome/schoolShow",
+    "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/showhome/schoolall",
+    "title": "所有校园列表",
+    "version": "1.0.0",
+    "group": "ShowHome",
+    "name": "schoolAll",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "school_id",
+            "description": "<p>学校ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "s_name",
+            "description": "<p>学校名</p>"
+          }
+        ]
+      }
+    },
+    "filename": "api/yiwei/controller/ShowhomeController.php",
+    "groupTitle": "ShowHome"
+  },
+  {
+    "type": "GET",
+    "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/showhome/schoolshow",
     "title": "校园展示介绍",
     "version": "1.0.0",
     "group": "ShowHome",

@@ -1,14 +1,14 @@
 define({
-  "name": "myapi",
+  "name": "yi_wei_api",
   "version": "1.0.0",
   "description": "小白",
-  "title": "myapi",
+  "title": "yi_wei",
   "sampleUrl": false,
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2019-03-23T08:28:56.433Z",
+    "time": "2019-03-25T12:21:53.530Z",
     "url": "http://apidocjs.com",
     "version": "0.17.7"
   }

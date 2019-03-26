@@ -150,13 +150,20 @@
             "optional": false,
             "field": "school.s_introduction",
             "description": "<p>学校介绍</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "schoolImage",
+            "description": "<p>学校图片</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-School:",
-          "content": "\"data\":{\n  \"school\":{\n         \"school_id\":1,\n         \"s_name\":\"集美大学\",\n         \"s_introduction\":\"集美极美\"\n           }\n        }",
+          "content": "\"data\":{\n  \"school\":{\n         \"school_id\":1,\n         \"s_name\":\"集美大学\",\n         \"s_introduction\":\"集美极美\"\n           }，\n   \"schoolImage\":\n         [\"http:\\/\\/img.ccutu.com\\/upload\\/2017-02-22\\/1f8aff81-4033-404b-bb3e-eab726a58b67.jpg\",\n          \"http:\\/\\/img.mp.itc.cn\\/upload\\/20160319\\/e9100b6761504994800015bb8b9c2d99_th.jpg\"]\n        }",
           "type": "json"
         }
       ]

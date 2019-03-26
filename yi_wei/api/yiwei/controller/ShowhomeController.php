@@ -9,6 +9,7 @@ namespace api\yiwei\controller;
 
 use cmf\controller\RestBaseController;
 use api\yiwei\model\SchoolModel;
+use api\yiwei\model\SchoolImageModel;
 
 class ShowhomeController extends RestBaseController
 {
@@ -24,13 +25,17 @@ class ShowhomeController extends RestBaseController
      * @apiSuccess {int} school.school_id 学校ID
      * @apiSuccess {String} school.s_name  学校名
      * @apiSuccess {String} school.s_introduction  学校介绍
+     * @apiSuccess {Object[]} schoolImage  学校图片
      * @apiSuccessExample {json} Success-School:
      *     "data":{
      *       "school":{
      *              "school_id":1,
      *              "s_name":"集美大学",
      *              "s_introduction":"集美极美"
-     *                }
+     *                }，
+     *        "schoolImage":
+     *              ["http:\/\/img.ccutu.com\/upload\/2017-02-22\/1f8aff81-4033-404b-bb3e-eab726a58b67.jpg",
+     *               "http:\/\/img.mp.itc.cn\/upload\/20160319\/e9100b6761504994800015bb8b9c2d99_th.jpg"]
      *             }
      */
     public function schoolShow()
@@ -43,8 +48,10 @@ class ShowhomeController extends RestBaseController
         $school=$sModel->getSchool($school_id);
         if($school!=null)
         {
+            $sIModel=new SchoolImageModel();
+            $schoolImage=$sIModel->getSchoolImageById($school_id);
             $school=$school->toArray();
-            $this->success('请求成功!', ['school'=>$school]);
+            $this->success('请求成功!', ['school'=>$school,'schoolImage'=>$schoolImage]);
         }else $this->error('请求失败');
     }
 

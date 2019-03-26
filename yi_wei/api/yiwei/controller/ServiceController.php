@@ -90,6 +90,7 @@ class ServiceController extends RestBaseController
      * @apiGroup Service
      * @apiName  all_service
      *
+     * @apiSuccess {Object[]} services 业务
      * @apiSuccess {int} service_id 业务ID
      * @apiSuccess {String} title  标题
      * @apiSuccess {String} content  业务介绍
@@ -131,6 +132,7 @@ class ServiceController extends RestBaseController
      * @apiVersion 1.0.0
      * @apiGroup Service
      * @apiName  selected_service
+     * @apiSuccess {Object[]} services 业务
      * @apiSuccess {int} service_id 业务ID
      * @apiSuccess {String} title  标题
      * @apiSuccess {String} content  业务介绍

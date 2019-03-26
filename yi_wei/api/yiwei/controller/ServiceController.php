@@ -21,6 +21,7 @@ class ServiceController extends RestBaseController
      * @apiParam {String} title 业务标题
      *@apiParam {String}  content 业务内容
      * @apiParam {String}  image_url 照片地址
+     * @apiParam {int}  is_selected 是否精选套餐
      */
     public function add_service()
     {
@@ -29,7 +30,8 @@ class ServiceController extends RestBaseController
         $title = $p['title'];
         $content = $p['content'];
         $image_url = $p['image_url'];
-        $data = $model->add_service($title, $content, $image_url);
+        $is_selected = $p['is_selected'];
+        $data = $model->add_service($title, $content, $image_url,$is_selected);
        $this->success('增加业务成功');
 
 
@@ -64,6 +66,7 @@ class ServiceController extends RestBaseController
      * @apiParam {String} title 业务标题
      *@apiParam {String}  content 业务内容
      * @apiParam {String}  image_url 照片地址
+     * @apiParam {int}  is_selected 是否精选套餐
      *
      */
     public function update_service()
@@ -74,7 +77,8 @@ class ServiceController extends RestBaseController
         $title = $p['title'];
         $content = $p['content'];
         $image_url = $p['image_url'];
-        $data = $model->update_service($service_id, $title, $content, $image_url);
+        $is_selected=$p['is_selected'];
+        $data = $model->update_service($service_id, $title, $content, $image_url,$is_selected);
         $this->success('更改业务成功');
 
     }
@@ -90,6 +94,7 @@ class ServiceController extends RestBaseController
      * @apiSuccess {String} title  标题
      * @apiSuccess {String} content  业务介绍
      * @apiSuccess {String} image_url  图片地址
+     * @apiSuccess {int} is_selected  是否精选套餐
      */
     public function all_service()
     {
@@ -109,6 +114,7 @@ class ServiceController extends RestBaseController
      * @apiSuccess {String} title  标题
      * @apiSuccess {String} content  业务介绍
      * @apiSuccess {String} image_url  图片地址
+     * @apiSuccess {int} is_selected  是否精选套餐
      */
     public function query_service()
     {
@@ -116,6 +122,25 @@ class ServiceController extends RestBaseController
         $p=$this->request->param();
         $service_id = $p['service_id'];
         $services = $model->query_service($service_id);
+        $this->success('请求成功!', ['services' => $services]);
+    }
+
+    /**
+     * zwl
+     * @api {GET} http://47.106.132.24/yi_wei/public/api.php/yiwei/service/selected_service 获取精选套餐
+     * @apiVersion 1.0.0
+     * @apiGroup Service
+     * @apiName  selected_service
+     * @apiSuccess {int} service_id 业务ID
+     * @apiSuccess {String} title  标题
+     * @apiSuccess {String} content  业务介绍
+     * @apiSuccess {String} image_url  图片地址
+     * @apiSuccess {int} is_selected  是否精选套餐
+     */
+    public function selected_service()
+    {
+        $model = new ServiceModel();
+        $services = $model->selected_service();
         $this->success('请求成功!', ['services' => $services]);
     }
 }

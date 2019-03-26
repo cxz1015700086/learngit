@@ -29,6 +29,13 @@ define({ "api": [
             "optional": false,
             "field": "image_url",
             "description": "<p>照片地址</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "is_selected",
+            "description": "<p>是否精选套餐</p>"
           }
         ]
       }
@@ -73,6 +80,13 @@ define({ "api": [
             "optional": false,
             "field": "image_url",
             "description": "<p>图片地址</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "is_selected",
+            "description": "<p>是否精选套餐</p>"
           }
         ]
       }
@@ -153,6 +167,64 @@ define({ "api": [
             "optional": false,
             "field": "image_url",
             "description": "<p>图片地址</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "is_selected",
+            "description": "<p>是否精选套餐</p>"
+          }
+        ]
+      }
+    },
+    "filename": "api/yiwei/controller/ServiceController.php",
+    "groupTitle": "Service"
+  },
+  {
+    "type": "GET",
+    "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/service/selected_service",
+    "title": "获取精选套餐",
+    "version": "1.0.0",
+    "group": "Service",
+    "name": "selected_service",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "service_id",
+            "description": "<p>业务ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>标题</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>业务介绍</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "image_url",
+            "description": "<p>图片地址</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "is_selected",
+            "description": "<p>是否精选套餐</p>"
           }
         ]
       }
@@ -197,6 +269,13 @@ define({ "api": [
             "optional": false,
             "field": "image_url",
             "description": "<p>照片地址</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "is_selected",
+            "description": "<p>是否精选套餐</p>"
           }
         ]
       }

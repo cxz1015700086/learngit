@@ -55,6 +55,13 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "services",
+            "description": "<p>业务</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "int",
             "optional": false,
             "field": "service_id",
@@ -191,6 +198,13 @@ define({ "api": [
     "success": {
       "fields": {
         "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "services",
+            "description": "<p>业务</p>"
+          },
           {
             "group": "Success 200",
             "type": "int",

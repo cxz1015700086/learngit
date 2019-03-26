@@ -47,7 +47,7 @@ class ServiceModel extends Model{
     }
     public function selected_service()
     {
-        return  ServiceModel::get(['is_selected' =>1]);
+        return  Db::name('yw_service')->where('is_selected',1)->select();
 
     }
 }

@@ -1,6 +1,107 @@
 [
   {
     "type": "GET",
+    "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/numbershow/query_card",
+    "title": "筛选号码",
+    "version": "1.0.0",
+    "group": "Numbershow",
+    "name": "query_service",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "number",
+            "description": "<p>所查找的数字</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "card_id",
+            "description": "<p>卡ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "card_number",
+            "description": "<p>卡号码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "card_status",
+            "description": "<p>卡状态</p>"
+          }
+        ]
+      }
+    },
+    "filename": "api/yiwei/controller/NumbershowController.php",
+    "groupTitle": "Numbershow"
+  },
+  {
+    "type": "GET",
+    "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/Numbershow/randomShow",
+    "title": "随机号码",
+    "version": "1.0.0",
+    "group": "Numbershow",
+    "name": "randomShow",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Objectp[]",
+            "optional": false,
+            "field": "randomNum",
+            "description": "<p>随机号码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "randomNum.card_id",
+            "description": "<p>卡ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "randomNum.card_number",
+            "description": "<p>卡号码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "randomNum.card_status",
+            "description": "<p>卡状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-RandomNum:",
+          "content": "\"data\":{\n      \"randomNum\":[\n           {\"card_id\":1,\"card_number\":\"17326611259\",\"card_status\":0},\n           {\"card_id\":3,\"card_number\":\"13023399881\",\"card_status\":0}\n        }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/yiwei/controller/NumbershowController.php",
+    "groupTitle": "Numbershow"
+  },
+  {
+    "type": "GET",
     "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/service/add_service",
     "title": "增加业务",
     "version": "1.0.0",

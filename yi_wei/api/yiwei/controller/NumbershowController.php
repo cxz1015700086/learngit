@@ -11,7 +11,7 @@ use api\yiwei\model\CardModel;
 class NumbershowController extends RestBaseController{
 
     /**
-     * @api {GET} http://47.106.132.24/yi_wei/public/api.php/yiwei/Numbershow/randomShow 随机号码
+     * @api {GET} http://47.106.132.24/yi_wei/public/api.php/yiwei/numbershow/randomShow 随机号码
      * @apiVersion 1.0.0
      * @apiGroup Numbershow
      * @apiName  randomShow
@@ -42,7 +42,7 @@ class NumbershowController extends RestBaseController{
 
     /**
      * zwl
-     * @api {GET} http://47.106.132.24/yi_wei/public/api.php/yiwei/numbershow/query_card 筛选号码
+     * @api {GET} http://47.106.132.24/yi_wei/public/api.php/yiwei/numbershow/query_number 筛选号码
      * @apiVersion 1.0.0
      * @apiGroup Numbershow
      * @apiName  query_service
@@ -53,7 +53,7 @@ class NumbershowController extends RestBaseController{
      */
     public function query_number()
     {
-        $model = new ShowcardModel();
+        $model = new CardModel();
         $p=$this->request->param();
         $number= $p['number'];
         $numbers = $model->query_number($number);

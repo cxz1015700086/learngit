@@ -1,7 +1,7 @@
 [
   {
     "type": "GET",
-    "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/numbershow/query_card",
+    "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/numbershow/query_number",
     "title": "筛选号码",
     "version": "1.0.0",
     "group": "Numbershow",
@@ -51,7 +51,7 @@
   },
   {
     "type": "GET",
-    "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/Numbershow/randomShow",
+    "url": "http://47.106.132.24/yi_wei/public/api.php/yiwei/numbershow/randomShow",
     "title": "随机号码",
     "version": "1.0.0",
     "group": "Numbershow",

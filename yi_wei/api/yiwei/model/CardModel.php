@@ -7,7 +7,7 @@
  */
 namespace api\yiwei\model;
 use think\Model;
-
+use think\Db;
 class CardModel extends Model{
     protected $table = 'cmf_yw_card';
 

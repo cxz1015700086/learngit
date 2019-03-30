@@ -8,6 +8,7 @@
 namespace api\yiwei\model;
 use think\Model;
 use think\Db;
+
 class SchoolModel extends Model{
     protected $table = 'cmf_yw_school';
 

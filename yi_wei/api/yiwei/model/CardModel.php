@@ -22,4 +22,7 @@ class CardModel extends Model{
         $numbers=Db::query($sql);
         return $numbers;
     }
+    public function  getCardStatus($card_id){
+        return CardModel::get(['card_id' => $card_id]);
+    }
 }

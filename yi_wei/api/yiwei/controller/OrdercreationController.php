@@ -45,13 +45,13 @@ class OrdercreationController extends RestBaseController{
         if($status['card_status']=='0'){
             $myCard->card_status = '1';
             $myCard->save();
-            /*$file=new FileModel();
+            $file=new FileModel();
             $file->data([
-                'front_image'=>$dataOne['file1']['cotent'],
-                'reverse_image'=>$dataOne['file2']['cotent'],
-                'stu_image'=>$dataOne['file3']['cotent']
+                'front_image'=>$dataOne['file1']['content'],
+                'reverse_image'=>$dataOne['file2']['content'],
+                'stu_image'=>$dataOne['file3']['content']
             ]);
-            $file->save();*/
+            $file->save();
             $person=new PersonalModel();
             $id=rand(1,1000);
             $person->data([
@@ -59,8 +59,8 @@ class OrdercreationController extends RestBaseController{
                 'p_name'=>$dataOne['p_name'],
                 'p_tel'=>$dataOne['p_tel'],
                 'p_school'=>$dataOne['p_school'],
-                'p_idnum'=>$dataOne['p_idnum']/*,
-                'file_id'=>$file->file_id*/
+                'p_idnum'=>$dataOne['p_idnum'],
+                'file_id'=>$file->file_id
                 // ''=>$dataOne[''],
             ]);
             $person->save();

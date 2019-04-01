@@ -10,4 +10,5 @@ use think\Model;
 class FileModel extends Model
 {
     protected $table = 'cmf_yw_file';
+    protected $pk='file_id';
 }

@@ -10,6 +10,8 @@ use cmf\controller\HomeBaseController;
 
 class OrdermanageController extends HomeBaseController{
       public function index(){}
-      public function orderQuery(){}
+      public function orderQuery(){
+          return $this->fetch();
+      }
       public function orderStatistics(){}
 }

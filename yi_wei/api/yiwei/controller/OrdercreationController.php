@@ -12,6 +12,7 @@ use api\yiwei\model\CardModel;
 use api\yiwei\model\PersonalModel;
 use api\yiwei\model\WhiteorderModel;
 use api\yiwei\model\SchoolorderModel;
+use api\yiwei\model\FileModel;
 class OrdercreationController extends RestBaseController{
     /**
      * @api {GET} http://47.106.132.24/yi_wei/public/api.php/yiwei/ordercreation/placeOrder  号卡下单
@@ -44,6 +45,13 @@ class OrdercreationController extends RestBaseController{
         if($status['card_status']=='0'){
             $myCard->card_status = '1';
             $myCard->save();
+            /*$file=new FileModel();
+            $file->data([
+                'front_image'=>$dataOne['file1']['cotent'],
+                'reverse_image'=>$dataOne['file2']['cotent'],
+                'stu_image'=>$dataOne['file3']['cotent']
+            ]);
+            $file->save();*/
             $person=new PersonalModel();
             $id=rand(1,1000);
             $person->data([
@@ -51,7 +59,8 @@ class OrdercreationController extends RestBaseController{
                 'p_name'=>$dataOne['p_name'],
                 'p_tel'=>$dataOne['p_tel'],
                 'p_school'=>$dataOne['p_school'],
-                'p_idnum'=>$dataOne['p_idnum']
+                'p_idnum'=>$dataOne['p_idnum']/*,
+                'file_id'=>$file->file_id*/
                 // ''=>$dataOne[''],
             ]);
             $person->save();
@@ -62,6 +71,7 @@ class OrdercreationController extends RestBaseController{
             }else{
                 $this->save_school_order($dataTwo,$id);
             }
+            $this->success('下单成功');
 
         }else{
             $this->error('下单失败');

@@ -21,6 +21,10 @@ define('APP_PATH', CMF_ROOT . 'app/');
 // 定义网站入口目录
 define('WEB_ROOT', __DIR__ . '/');
 
+header("Access-Control-Allow-Origin:*");
+header("Access-Control-Allow-Methods:GET, POST, OPTIONS, DELETE");
+header("Access-Control-Allow-Headers:DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type, Accept-Language, Origin, Accept-Encoding");
+
 // 加载基础文件
 require __DIR__ . '/../vendor/thinkphp/base.php';
 

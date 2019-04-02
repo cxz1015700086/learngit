@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="__ROOT__/static/css/order.css" rel="stylesheet" type="text/css">
+    <title>信息管理系统</title>
 </head>
 <body>
-$END$
+<form id="submitForm" name="submitForm" action="" method="post">
+    <div id="container">
+        <div class="ui_content">
+            <div class="ui_text_indent">
+                <div id="box_border">
+                    <div id="box_top">业务查询</div>
+                    <div id="box_center">
+                        业务标题&nbsp;<input type="text" id="" name="" class="ui_input_txt02" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui_content">
+            <div class="ui_tb">
+                <table class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+                    <tr>
+                        <th width="30">
+                        </th>
+                        <th>标题</th>
+                        <th>内容</th>
+                        <th>图片地址</th>
+                        <th>操作</th>
+                    </tr>
+                    <volist name="services" id="service">
+                    <tr>
+                        <td width="30">
+                        </td>
+                        <td>{$service.title}</td>
+                        <td>{$service.content}</td>
+                        <td><img src="{$service.image_url}" width="100px" height="100px"></td>
+                        <td>
+                            <a href="" class="edit">编辑</a>
+                            <a href="">删除</a>
+                        </td>
+                    </tr>
+                    </volist>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
 </body>
 </html>

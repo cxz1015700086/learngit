@@ -7,9 +7,16 @@
  */
 
 namespace app\yiwei\controller;
-
-
-class ServicemanageController
+use cmf\controller\HomeBaseController;
+use api\yiwei\model\ServiceModel;
+class ServicemanageController extends HomeBaseController
 {
+    public function index(){}
+    public function serviceQuery(){
 
+        $model = new ServiceModel();
+        $services = $model->all_service();
+        $this->assign('services',$services);
+        return  view();
+    }
 }
